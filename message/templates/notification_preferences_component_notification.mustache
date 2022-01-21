@@ -56,58 +56,56 @@
 }}
 <tr class="preference-row" data-region="preference-row" data-preference-key="{{preferencekey}}">
     <td class="preference-name">{{displayname}}</td>
-    {{#processors}}
     <td {{^userconfigured}}class="disabled"{{/userconfigured}} data-processor-name="{{name}}">
-            {{#locked}}
-                <div class="dimmed_text">{{lockedmessage}}</div>
-            {{/locked}}
-            {{^locked}}
-                <div class="disabled-message">{{#str}} disabled, admin {{/str}}</div>
-                <form>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-6">
-                                {{#loggedin}}
-                                    {{< core/hover_tooltip }}
-                                        {{$anchor}}
-                                            <label class="custom-control custom-switch"
-                                                title="{{displayname}}"
-                                                data-state="{{name}}">
-                                                <span class="accesshide">{{displayname}}</span>
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    {{#checked}}checked{{/checked}}
-                                                    {{#disableall}}disabled{{/disableall}} />
-                                                <span class="custom-control-label d-block"></span>
-                                            </label>
-                                        {{/anchor}}
-                                        {{$tooltip}}{{displayname}}{{/tooltip}}
-                                    {{/ core/hover_tooltip }}
-                                {{/loggedin}}
-                            </div>
-                            <div class="col-6">
-                                {{#loggedoff}}
-                                    {{< core/hover_tooltip }}
-                                        {{$anchor}}
-                                            <label class="custom-control custom-switch"
-                                                title="{{displayname}}"
-                                                data-state="{{name}}">
-                                                <span class="accesshide">{{displayname}}</span>
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    {{#checked}}checked{{/checked}}
-                                                    {{#disableall}}disabled{{/disableall}} />
-                                                <span class="custom-control-label d-block"></span>
-                                            </label>
-                                        {{/anchor}}
-                                        {{$tooltip}}{{displayname}}{{/tooltip}}
-                                    {{/ core/hover_tooltip }}
-                                {{/loggedoff}}
-                            </div>
+        {{#locked}}
+            <div class="dimmed_text">{{lockedmessage}}</div>
+        {{/locked}}
+        {{^locked}}
+            <div class="disabled-message">{{#str}} disabled, admin {{/str}}</div>
+            <form>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            {{#loggedin}}
+                                {{< core/hover_tooltip }}
+                                    {{$anchor}}
+                                        <label class="custom-control custom-switch"
+                                            title="{{displayname}}"
+                                            data-state="{{name}}">
+                                            <span class="accesshide">{{displayname}}</span>
+                                            <input type="checkbox"
+                                                class="custom-control-input"
+                                                {{#checked}}checked{{/checked}}
+                                                {{#disableall}}disabled{{/disableall}} />
+                                            <span class="custom-control-label d-block"></span>
+                                        </label>
+                                    {{/anchor}}
+                                    {{$tooltip}}{{displayname}}{{/tooltip}}
+                                {{/ core/hover_tooltip }}
+                            {{/loggedin}}
+                        </div>
+                        <div class="col-6">
+                            {{#loggedoff}}
+                                {{< core/hover_tooltip }}
+                                    {{$anchor}}
+                                        <label class="custom-control custom-switch"
+                                            title="{{displayname}}"
+                                            data-state="{{name}}">
+                                            <span class="accesshide">{{displayname}}</span>
+                                            <input type="checkbox"
+                                                class="custom-control-input"
+                                                {{#checked}}checked{{/checked}}
+                                                {{#disableall}}disabled{{/disableall}} />
+                                            <span class="custom-control-label d-block"></span>
+                                        </label>
+                                    {{/anchor}}
+                                    {{$tooltip}}{{displayname}}{{/tooltip}}
+                                {{/ core/hover_tooltip }}
+                            {{/loggedoff}}
                         </div>
                     </div>
-                </form>
-            {{/locked}}
-        </td>
-    {{/processors}}
+                </div>
+            </form>
+        {{/locked}}
+    </td>
 </tr>
