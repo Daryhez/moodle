@@ -883,6 +883,10 @@
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
+.path-mod-assign [data-region="grade-panel"] .fitem.has-popout {
+    overflow: auto;
+}
+
 .path-mod-assign #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.popout .fitemtitle {
     text-align: center;
     padding-left: 15px;
